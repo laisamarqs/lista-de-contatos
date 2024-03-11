@@ -1,22 +1,27 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import ContactList from './ContactList';
 import AddContactForm from './AddContactForm';
 
-function App() {
-  const [contacts, setContacts] = useState([]);
+interface Contact {
+  name: string;
+  email: string;
+  phone: string;
+}
 
-  const addContact = (contact) => {
+const App: React.FC = () => {
+  const [contacts, setContacts] = useState<Contact[]>([]);
+
+  const addContact = (contact: Contact) => {
     setContacts([...contacts, contact]);
   };
 
-  const removeContact = (index) => {
+  const removeContact = (index: number) => {
     const newContacts = [...contacts];
     newContacts.splice(index, 1);
     setContacts(newContacts);
   };
 
-  const editContact = (index, updatedContact) => {
+  const editContact = (index: number, updatedContact: Contact) => {
     const newContacts = [...contacts];
     newContacts[index] = updatedContact;
     setContacts(newContacts);
@@ -32,3 +37,5 @@ function App() {
 }
 
 export default App;
+
+

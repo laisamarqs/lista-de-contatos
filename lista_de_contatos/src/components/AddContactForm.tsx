@@ -1,7 +1,7 @@
-// eslint-disable-next-line no-unused-vars
+
 import React, { useState } from 'react';
 
-// eslint-disable-next-line react/prop-types
+
 function AddContactForm({ addContact }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
